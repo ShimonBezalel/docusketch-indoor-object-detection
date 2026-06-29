@@ -1,0 +1,235 @@
+{
+  "conversion": {
+    "all_class_coverage": true,
+    "boxes": 4595,
+    "clipped_boxes": 11,
+    "images": 2213,
+    "labels": 2213,
+    "max_normalized_error_scaled_to_pixels": 5.688889359589666e-08,
+    "rejected_empty_boxes": 0
+  },
+  "dataset": {
+    "annotation_format": "dlib XML: image nodes with box top/left/width/height and string label",
+    "archive_bytes": 411009245,
+    "archive_filename": "Indoor Object Detection Dataset.zip",
+    "archive_md5": "a6c008910749bc9392df6a3f049de29a",
+    "archive_sha256": "83ebe49af1ffbbd04fe00a7c170f2ce2983232b9d9122ab7900aaec6aec327e2",
+    "boxes": 4595,
+    "class_map": {
+      "chair": 0,
+      "clock": 1,
+      "exit": 2,
+      "fireextinguisher": 3,
+      "printer": 4,
+      "screen": 5,
+      "trashbin": 6
+    },
+    "classes": [
+      "chair",
+      "clock",
+      "exit",
+      "fireextinguisher",
+      "printer",
+      "screen",
+      "trashbin"
+    ],
+    "clipped_boxes": 11,
+    "image_size": "1280x720",
+    "images": 2213,
+    "name": "Indoor Object Detection Dataset",
+    "paper_url": "https://arxiv.org/pdf/1807.03142",
+    "record_id": 2654485,
+    "rejected_boxes": 0,
+    "sequences": 6,
+    "zenodo_record_url": "https://zenodo.org/records/2654485"
+  },
+  "evaluator": {
+    "checkpoint": "weights/best.pt",
+    "confidence_threshold": 0.001,
+    "imgsz": 640,
+    "map_iou_thresholds": "0.50:0.05:0.95",
+    "max_detections": 300,
+    "nms": "Ultralytics default class-aware NMS",
+    "nms_iou_threshold": 0.7,
+    "split": "validation",
+    "validation_sequence": "sequence_2"
+  },
+  "overall_validation_metrics": {
+    "mAP@0.5": 0.9142468560922434,
+    "mAP@0.5:0.95": 0.6797427961374912,
+    "mAP@0.75": 0.7892470680203971,
+    "precision": 0.9254866423182365,
+    "recall": 0.8228287121657972
+  },
+  "per_class_validation_metrics": [
+    {
+      "boxes_images": "127 / 70",
+      "class": "chair",
+      "mAP@0.5": 0.6808374912869193,
+      "mAP@0.5:0.95": 0.3613194964778633,
+      "precision": 0.8820230452553439,
+      "recall": 0.4015748031496063
+    },
+    {
+      "boxes_images": "25 / 25",
+      "class": "clock",
+      "mAP@0.5": 0.995,
+      "mAP@0.5:0.95": 0.8080075401739644,
+      "precision": 1.0,
+      "recall": 0.9963403434606727
+    },
+    {
+      "boxes_images": "59 / 59",
+      "class": "exit",
+      "mAP@0.5": 0.9891115257048093,
+      "mAP@0.5:0.95": 0.81361634756696,
+      "precision": 0.9292588442515013,
+      "recall": 0.9661016949152542
+    },
+    {
+      "boxes_images": "53 / 51",
+      "class": "fireextinguisher",
+      "mAP@0.5": 0.995,
+      "mAP@0.5:0.95": 0.7632682145521072,
+      "precision": 1.0,
+      "recall": 0.980681093913595
+    },
+    {
+      "boxes_images": "23 / 23",
+      "class": "printer",
+      "mAP@0.5": 0.995,
+      "mAP@0.5:0.95": 0.821133893557423,
+      "precision": 0.9023830616659887,
+      "recall": 1.0
+    },
+    {
+      "boxes_images": "8 / 8",
+      "class": "screen",
+      "mAP@0.5": 0.7811212121212119,
+      "mAP@0.5:0.95": 0.5121749999999999,
+      "precision": 0.8120336208734328,
+      "recall": 0.625
+    },
+    {
+      "boxes_images": "51 / 50",
+      "class": "trashbin",
+      "mAP@0.5": 0.9636577635327634,
+      "mAP@0.5:0.95": 0.6786790806341207,
+      "precision": 0.9527079241813888,
+      "recall": 0.7901030497214527
+    }
+  ],
+  "qualitative": {
+    "bad_examples_source": "Failure-oriented validation gallery; sequence_2 validation images only; green ground truth, orange predictions.",
+    "failure_summary": {
+      "false_positive_boxes": 48,
+      "matched_boxes": 260,
+      "missed_boxes": 86,
+      "validation_images_scored": 217
+    },
+    "good_examples_source": "Ultralytics validation prediction sheet; sequence_2 validation images only; class+confidence labels visible.",
+    "validation_only": true
+  },
+  "split": {
+    "class_map_hash": "a2b104d55f1370b28564a09a4abb19942d2dd82be0abfa443d8a78c9f0302e86",
+    "hash": "11359c9c4e03a6548df51cf892c95f34c6b6d55eabd105ad88ab2662adef3d01",
+    "leakage_checks": {
+      "adjacent_cross_split_boundaries": 0,
+      "cross_split_temporal_pairs_within_5_frames": 0,
+      "dhash_near_duplicate_pairs": 0,
+      "semantic_hard_failures": 0
+    },
+    "policy": "strict whole source sequence split",
+    "rows": [
+      {
+        "box_percent": 83.351,
+        "boxes": 3830,
+        "image_percent": 81.744,
+        "images": 1809,
+        "sequences": "1, 3, 4, 5",
+        "split": "train"
+      },
+      {
+        "box_percent": 7.53,
+        "boxes": 346,
+        "image_percent": 9.806,
+        "images": 217,
+        "sequences": "2",
+        "split": "validation"
+      },
+      {
+        "box_percent": 9.119,
+        "boxes": 419,
+        "image_percent": 8.45,
+        "images": 187,
+        "sequences": "6",
+        "split": "test"
+      }
+    ],
+    "support": [
+      {
+        "class": "chair",
+        "test": "59 / 55",
+        "train": "1476 / 725",
+        "validation": "127 / 70"
+      },
+      {
+        "class": "clock",
+        "test": "87 / 87",
+        "train": "168 / 165",
+        "validation": "25 / 25"
+      },
+      {
+        "class": "exit",
+        "test": "135 / 115",
+        "train": "351 / 330",
+        "validation": "59 / 59"
+      },
+      {
+        "class": "fireextinguisher",
+        "test": "117 / 97",
+        "train": "1514 / 670",
+        "validation": "53 / 51"
+      },
+      {
+        "class": "printer",
+        "test": "1 / 1",
+        "train": "57 / 57",
+        "validation": "23 / 23"
+      },
+      {
+        "class": "screen",
+        "test": "12 / 12",
+        "train": "95 / 74",
+        "validation": "8 / 8"
+      },
+      {
+        "class": "trashbin",
+        "test": "8 / 4",
+        "train": "169 / 116",
+        "validation": "51 / 50"
+      }
+    ]
+  },
+  "title": "Indoor Object Detection - YOLO11 Baseline on Strict Sequence Split",
+  "training": {
+    "batch": 16,
+    "best_checkpoint_sha256": "45826208727aa8c96a5246372cef5edc6f014dd47650ce4daa67ea05a55c9c83",
+    "bundle_sha256": "82b1f7015e068dfe5262cd863b8dc99de7335f5ea496d01fce74ffbb8189d093",
+    "checkpoint_reload_verified": true,
+    "cuda": "12.8",
+    "end_to_end_duration_seconds": 2946.465423345566,
+    "epochs_completed": 75,
+    "epochs_requested": 75,
+    "imgsz": 640,
+    "model": "yolo11s.pt",
+    "pretrained": true,
+    "python": "3.12.13",
+    "run_id": "baseline_20260628_colab_t4",
+    "runtime": "Google Colab, Tesla T4",
+    "seed": 20260628,
+    "torch": "2.11.0+cu128",
+    "training_duration_seconds": 2880.4,
+    "ultralytics": "8.4.80"
+  }
+}

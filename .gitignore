@@ -1,0 +1,13 @@
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+*.pt
+*.pth
+*.onnx
+*.zip
+*.log
+_local_docusketch_data/
+docusketch_indoor_detection/
+runtime_artifacts/
+yolo_dataset/
+Indoor Object Detection Dataset/

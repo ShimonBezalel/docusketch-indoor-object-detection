@@ -1,0 +1,104 @@
+[
+  {
+    "bytes": 3587,
+    "file": "asset_manifest.json",
+    "sha256": "0da0d450655f406d5c35d17514ee919984fed60fac6e8b52bc8739da99ba1049",
+    "source": "generated final reviewer asset"
+  },
+  {
+    "bytes": 288451,
+    "file": "bad_validation_examples.jpg",
+    "sha256": "6ff29df7c4c6d0063f9611ba070a0844658a979c8860bf5fa0d9285b4709e4f2",
+    "source": "reviewed validation failure gallery from the accepted baseline run"
+  },
+  {
+    "bytes": 172332,
+    "file": "box_area_aspect_distribution.png",
+    "sha256": "d556904cfac579ee68c12f083a6e357b54c1dbc4f3fc56782d437016b7b99f33",
+    "source": "reviewed dataset geometry EDA figure"
+  },
+  {
+    "bytes": 68015,
+    "file": "class_distribution.png",
+    "sha256": "fe6bcab9ab0613036cb061e0f7433e6e083bf0f665d2753e87d492579668de8f",
+    "source": "reviewed dataset class distribution figure"
+  },
+  {
+    "bytes": 159399,
+    "file": "confusion_matrix.png",
+    "sha256": "83dcb86ee71e62b373200d2236c49f614bda98c2822fb22bb4ddd584abbe2287",
+    "source": "reviewed validation confusion matrix from the accepted baseline run"
+  },
+  {
+    "bytes": 127533,
+    "file": "converted_label_overlay_sanity.jpg",
+    "sha256": "9798ebbfc135d381103525151d3ee960cd718a821304d138a4c1a50de26d3b7a",
+    "source": "reviewed YOLO conversion overlay sanity figure"
+  },
+  {
+    "bytes": 271613,
+    "file": "f1_curve.png",
+    "sha256": "cdec3463dea4fc85c79e15fa838757bfb3f62062e6aa3c8f7ade054c7f354d5f",
+    "source": "reviewed validation F1 curve from the accepted baseline run"
+  },
+  {
+    "bytes": 513258,
+    "file": "good_validation_examples.jpg",
+    "sha256": "7b517d03b005c120fc490cf5771c5819eed2739c515ea930517d1255ca7f34d4",
+    "source": "reviewed validation prediction sheet from the accepted baseline run"
+  },
+  {
+    "bytes": 880339,
+    "file": "ground_truth_gallery.jpg",
+    "sha256": "b8882178f84e1b33b565443a7608ade10e75a7b79bdce733ca6c391db99246e7",
+    "source": "reviewed ground-truth annotation gallery"
+  },
+  {
+    "bytes": 66411,
+    "file": "per_class_metrics.png",
+    "sha256": "d1adae7ba1927ed2e99b72bc96083033569f1528451bd986c75f679145f33be0",
+    "source": "reviewed per-class validation metric figure from the accepted baseline run"
+  },
+  {
+    "bytes": 146723,
+    "file": "pr_curve.png",
+    "sha256": "0fdcf2fcc356ef11ea3c513a1f61f64fb124dd0aa398328bb612ee59c5107269",
+    "source": "reviewed validation PR curve from the accepted baseline run"
+  },
+  {
+    "bytes": 6529,
+    "file": "precomputed_results.json",
+    "sha256": "ba48bd585dbd9825b8db6cbc3649111868715a38d01e5b5bf649195108d64f99",
+    "source": "audited dataset, split, conversion, and validation metric summary"
+  },
+  {
+    "bytes": 127091,
+    "file": "sequence_class_heatmap.png",
+    "sha256": "971cb752fd4d2d252df09d4258794b5acc52e0794702201812b08691b7f123f4",
+    "source": "reviewed sequence-by-class EDA figure"
+  },
+  {
+    "bytes": 50399,
+    "file": "split_support_summary.png",
+    "sha256": "942e10f580d3720c3fe762aa69f4431ae1eee6f550828b738d354c2bd45140c2",
+    "source": "reviewed strict-split support summary figure"
+  },
+  {
+    "bytes": 346191,
+    "file": "training_curves.png",
+    "sha256": "f00f2e37720c5effd723f53f6ad1836bf8f84d3646682006c61074a949a8eafd",
+    "source": "reviewed training curve figure from the accepted baseline run"
+  },
+  {
+    "bytes": 268772,
+    "file": "validation_gt_prediction_overlay.jpg",
+    "sha256": "2de40df5d3e90873944bd1949140145ebd503b647b200f535ee4bb268afcff8a",
+    "source": "reviewed validation GT/prediction overlay from the accepted baseline run"
+  },
+  {
+    "bytes": 68692,
+    "file": "validation_metrics_table.png",
+    "sha256": "2649c8c0a7630913ab9828ddf5236a33628f21e14eb9dda0eee3afaad69cc83b",
+    "source": "reviewed validation metrics table figure from the accepted baseline run"
+  }
+]

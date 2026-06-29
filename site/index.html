@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indoor Object Detection — YOLO11 Baseline</title>
+  <style>
+    :root { color-scheme: light; --ink: #17202a; --muted: #5d6d7e; --line: #d6dbdf; --accent: #1f618d; --soft: #f4f6f7; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); line-height: 1.55; background: white; }
+    main { max-width: 1120px; margin: 0 auto; padding: 40px 22px 64px; }
+    h1 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; margin: 0 0 14px; }
+    h2 { margin-top: 42px; border-top: 1px solid var(--line); padding-top: 28px; }
+    a { color: var(--accent); }
+    .lead { font-size: 1.13rem; color: var(--muted); max-width: 860px; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+    .button { display: inline-block; padding: 10px 14px; border-radius: 8px; background: var(--accent); color: white; text-decoration: none; font-weight: 650; }
+    .button.secondary { background: var(--soft); color: var(--accent); border: 1px solid var(--line); }
+    table { border-collapse: collapse; width: 100%; margin: 14px 0 22px; font-size: 0.95rem; }
+    th, td { border: 1px solid var(--line); padding: 9px 10px; text-align: left; }
+    th { background: var(--soft); }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    figure { margin: 24px 0; }
+    figcaption { color: var(--muted); font-size: 0.93rem; margin-top: 8px; }
+    img { max-width: 100%; border: 1px solid var(--line); border-radius: 6px; background: white; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .note { background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+    code { background: var(--soft); padding: 0.15em 0.28em; border-radius: 4px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Indoor Object Detection — YOLO11 Baseline</h1>
+  <p class="lead">A Google Colab YOLO11s baseline on the Indoor Object Detection Dataset, using a strict sequence-aware split to avoid adjacent-frame leakage while reporting overall and per-class validation mAP for all seven classes.</p>
+
+  <div class="cta">
+    <a class="button" href="https://colab.research.google.com/github/ShimonBezalel/docusketch-indoor-object-detection/blob/main/Indoor_Object_Detection_YOLO11_Baseline.ipynb">Open primary Colab notebook</a>
+    <a class="button secondary" href="https://github.com/ShimonBezalel/docusketch-indoor-object-detection">View public repository</a>
+  </div>
+
+  <section>
+    <h2>Result summary</h2>
+    <table>
+      <tr><th>Item</th><th>Value</th></tr>
+      <tr><td>Model</td><td>YOLO11s pretrained detector</td></tr>
+      <tr><td>Validation mAP@0.5</td><td>0.9142</td></tr>
+      <tr><td>Validation mAP@0.5:0.95</td><td>0.6797</td></tr>
+      <tr><td>Validation split</td><td>sequence 2, 217 images, 346 boxes</td></tr>
+      <tr><td>Training runtime</td><td>Google Colab Tesla T4, 75 epochs, batch 16, image size 640</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Split and leakage control</h2>
+    <p>The dataset images come from six source video sequences. Random image-level splitting can place adjacent or near-duplicate frames across train/validation/test. I used whole source sequences instead.</p>
+    <table>
+      <tr><th>Split</th><th>Source sequences</th><th class="num">Images</th><th class="num">Percentage</th></tr>
+      <tr><td>train</td><td>1, 3, 4, 5</td><td class="num">1,809</td><td class="num">81.744%</td></tr>
+      <tr><td>validation</td><td>2</td><td class="num">217</td><td class="num">9.806%</td></tr>
+      <tr><td>test</td><td>6</td><td class="num">187</td><td class="num">8.450%</td></tr>
+    </table>
+    <p class="note">The split is approximate rather than exact 80/10/10 because sequence-disjoint evaluation is more reliable than exact percentages. All seven classes appear in every subset.</p>
+    <figure>
+      <img src="../assets/split_support_summary.png" alt="Split support summary">
+      <figcaption>Per-class support in train, validation, and test.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Validation metrics</h2>
+    <table>
+      <tr><th>Metric</th><th class="num">Value</th></tr>
+      <tr><td>precision</td><td class="num">0.9255</td></tr>
+      <tr><td>recall</td><td class="num">0.8228</td></tr>
+      <tr><td>mAP@0.5</td><td class="num">0.9142</td></tr>
+      <tr><td>mAP@0.75</td><td class="num">0.7892</td></tr>
+      <tr><td>mAP@0.5:0.95</td><td class="num">0.6797</td></tr>
+    </table>
+    <table>
+      <tr><th>Class</th><th class="num">Boxes / images</th><th class="num">Precision</th><th class="num">Recall</th><th class="num">mAP@0.5</th><th class="num">mAP@0.5:0.95</th></tr>
+      <tr><td>chair</td><td class="num">127 / 70</td><td class="num">0.8820</td><td class="num">0.4016</td><td class="num">0.6808</td><td class="num">0.3613</td></tr>
+      <tr><td>clock</td><td class="num">25 / 25</td><td class="num">1.0000</td><td class="num">0.9963</td><td class="num">0.9950</td><td class="num">0.8080</td></tr>
+      <tr><td>exit</td><td class="num">59 / 59</td><td class="num">0.9293</td><td class="num">0.9661</td><td class="num">0.9891</td><td class="num">0.8136</td></tr>
+      <tr><td>fireextinguisher</td><td class="num">53 / 51</td><td class="num">1.0000</td><td class="num">0.9807</td><td class="num">0.9950</td><td class="num">0.7633</td></tr>
+      <tr><td>printer</td><td class="num">23 / 23</td><td class="num">0.9024</td><td class="num">1.0000</td><td class="num">0.9950</td><td class="num">0.8211</td></tr>
+      <tr><td>screen</td><td class="num">8 / 8</td><td class="num">0.8120</td><td class="num">0.6250</td><td class="num">0.7811</td><td class="num">0.5122</td></tr>
+      <tr><td>trashbin</td><td class="num">51 / 50</td><td class="num">0.9527</td><td class="num">0.7901</td><td class="num">0.9637</td><td class="num">0.6787</td></tr>
+    </table>
+    <div class="grid">
+      <figure>
+        <img src="../assets/training_curves.png" alt="Training curves">
+        <figcaption>Training curves from the accepted baseline run.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/per_class_metrics.png" alt="Per-class validation metrics">
+        <figcaption>Per-class validation mAP@0.5:0.95 with support.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Good and bad validation examples</h2>
+    <figure>
+      <img src="../assets/good_validation_examples.jpg" alt="Good validation examples">
+      <figcaption>Validation predictions with class and confidence labels.</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/validation_gt_prediction_overlay.jpg" alt="Validation ground-truth and prediction overlay">
+      <figcaption>Validation ground truth and predictions: green is ground truth, orange is prediction.</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/bad_validation_examples.jpg" alt="Bad validation examples">
+      <figcaption>Failure-oriented validation examples with dense chair clusters, misses, and false positives.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Limitations</h2>
+    <p>The result is intentionally a single baseline rather than a tuned benchmark. Chair is the weakest class because chairs often appear in dense overlapping groups with occlusion, truncation, and varied viewpoints. Screen performance is also uncertain because the validation split has only eight screen boxes.</p>
+  </section>
+
+  <section>
+    <h2>AI-assisted workflow</h2>
+    <p>AI agents accelerated dataset auditing, split validation, Colab execution, artifact handling, and notebook QA. Final ML/evaluation decisions were manually reviewed. See <a href="../AI_ASSISTED_WORKFLOW.md">AI_ASSISTED_WORKFLOW.md</a>.</p>
+  </section>
+</main>
+</body>
+</html>
