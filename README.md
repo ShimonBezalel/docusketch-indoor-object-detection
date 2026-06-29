@@ -58,7 +58,7 @@ MODE = "review"
 USE_PRECOMPUTED_RESULTS = True
 ```
 
-This shows the accepted run without starting a training job. To rerun validation from the published checkpoint, switch to `MODE = "evaluate"`. To retrain from scratch, switch to `MODE = "train"` in a Colab GPU runtime.
+This shows the accepted run without starting a training job. Switch to `MODE = "audit"` to download the official dataset and regenerate dataset counts, class/sequence distributions, bounding-box geometry, split counts, exact per-class split support, and ground-truth overlays from code. Switch to `MODE = "evaluate"` to rerun validation from the published checkpoint. To retrain from scratch, switch to `MODE = "train"` in a Colab GPU runtime.
 
 ## Dataset attribution
 
