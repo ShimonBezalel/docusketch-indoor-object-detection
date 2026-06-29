@@ -9,4 +9,4 @@
 | Artifact persistence | Preserve run identity and hashes. | Split, class-map, checkpoint, and bundle hashes. | Checkpoint reload and bundle integrity verified. | Yes, in reproducibility appendix. |
 | Final notebook QA | Check standalone readability and assignment compliance. | Reviewer-facing notebook, saved outputs, static assets. | Human review before public packaging. | Yes. |
 
-No raw prompts, private logs, or internal work traces are included in this public repository.
+No private instructions, logs, or internal work traces are included in this public repository.
