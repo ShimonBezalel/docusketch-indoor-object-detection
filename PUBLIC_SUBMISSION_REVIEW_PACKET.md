@@ -16,6 +16,10 @@
 
 <https://shimonbezalel.github.io/docusketch-indoor-object-detection/site/>
 
+## Published checkpoint release
+
+<https://github.com/ShimonBezalel/docusketch-indoor-object-detection/releases/tag/v1.0-submission>
+
 ## Fresh-review instruction
 
 Review this as a DocuSketch evaluator. Focus on whether the Colab notebook clearly satisfies the assignment, whether the split/metrics/visual examples are defensible, and whether the AI-assisted workflow note helps the submission by showing mature AI-native engineering or distracts from the assignment.

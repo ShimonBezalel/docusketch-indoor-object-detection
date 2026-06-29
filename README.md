@@ -3,7 +3,9 @@
 **Primary submission:** open the notebook in Google Colab:
 <https://colab.research.google.com/github/ShimonBezalel/docusketch-indoor-object-detection/blob/main/Indoor_Object_Detection_YOLO11_Baseline.ipynb>
 
-**Static report:** <https://shimonbezalel.github.io/docusketch-indoor-object-detection/site/>
+**Supplemental public repo:** <https://github.com/ShimonBezalel/docusketch-indoor-object-detection>
+
+**Optional static report:** <https://shimonbezalel.github.io/docusketch-indoor-object-detection/site/>
 
 This repository contains a lean public submission for the DocuSketch Indoor Object Detection assignment. The primary deliverable is a Colab notebook that downloads and verifies the official Indoor Object Detection Dataset, parses dlib XML annotations, builds a strict sequence-aware split, trains/evaluates a YOLO11s baseline, and reports validation metrics plus good and bad validation examples.
 
@@ -41,19 +43,22 @@ This is approximate rather than exact 80/10/10 because sequence-disjoint validat
 
 - Raw dataset archive or extracted images.
 - Converted full YOLO dataset.
-- Model weights or checkpoints.
+- Model weights or checkpoints in git.
 - Training bundles, runtime logs, or private work artifacts.
+
+The accepted checkpoint is published as a GitHub Release asset instead of being committed to the repository:
+<https://github.com/ShimonBezalel/docusketch-indoor-object-detection/releases/tag/v1.0-submission>
 
 ## Reproduce
 
 Open the Colab notebook above. By default:
 
 ```python
-RUN_TRAINING = False
+MODE = "review"
 USE_PRECOMPUTED_RESULTS = True
 ```
 
-This shows the accepted run without starting a training job. To retrain from scratch, switch `RUN_TRAINING=True` in a Colab GPU runtime.
+This shows the accepted run without starting a training job. To rerun validation from the published checkpoint, switch to `MODE = "evaluate"`. To retrain from scratch, switch to `MODE = "train"` in a Colab GPU runtime.
 
 ## Dataset attribution
 
